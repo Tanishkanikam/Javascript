@@ -33,3 +33,30 @@ const myFunction = function () {
     
 }
 console.log(typeof outsideTemp);
+
+
+// +++++++++++++++++++++++++++++++++
+
+// stack (primitive), Heap (Non - primitive)
+
+let myyoutybechannel = "tanishkavlogs"
+
+let anothername = myyoutybechannel
+
+anothername = "javavrish"
+console.log(myyoutybechannel);
+
+console.log(anothername);
+
+let userone = {
+
+    email : "tanishka@gmail",
+    upi : "tani@ypl"
+}
+
+let userTwo = userone
+
+userTwo.email = "vivo@gmail.com"
+
+console.log(userone.email);
+console.log(userTwo.email);
