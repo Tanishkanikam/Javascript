@@ -77,3 +77,20 @@ function callback(){
 }
 
 p.then(callback)
+
+// function setTimeoutPromisified() {
+//   return new Promise(doAsyncOp)
+// }
+// function callback(){
+//   console.log("resolved");
+  
+// }
+
+// function callback2(){
+//   console.log("resolved2");
+  
+// }
+// const p = setTimeoutPromisified();
+
+// p.then(callback);
+// p.then(callback2;)
