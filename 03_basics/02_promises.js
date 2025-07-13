@@ -61,22 +61,22 @@
 
 // the real syntax / operation that we want to promisify
 
-function readnewfile(resolve){
-  setTimeout(resolve,5000)
-}
+// function readnewfile(resolve){
+//   setTimeout(resolve,5000)
+// }
 
-function setTimeoutPromisified(){
-return new Promise(readnewfile)
-}
+// function setTimeoutPromisified(){
+// return new Promise(readnewfile)
+// }
 
-const p = setTimeoutPromisified();
+// const p = setTimeoutPromisified();
 
-function callback(){
-  console.log("3 seconds have passed");
+// function callback(){
+//   console.log("3 seconds have passed");
   
-}
+// }
 
-p.then(callback)
+// p.then(callback)
 
 // function setTimeoutPromisified() {
 //   return new Promise(doAsyncOp)
@@ -94,3 +94,68 @@ p.then(callback)
 
 // p.then(callback);
 // p.then(callback2;)
+
+
+function setTimeoutPromisified(duration){
+  return new Promise(function(resolve){
+    setTimeout(resolve, duration);
+  });
+
+
+}
+function  callback(){
+  console.log("1 second time has passed");
+  
+}
+
+setTimeoutPromisified(5000).then(callback);
+
+function callback(){
+  console.log("hii");
+  
+}
+setTimeout( function(){
+  console.log("hii");
+  setTimeout( function(){
+    console.log("hello");
+    setTimeout(function(){
+      console.log("how are you doing?");
+      
+    },5000);
+  },3000);
+},1000);
+
+function setTimeoutPromisified(duration){
+  return new Promise (function(resolve){
+    setTimeout(resolve,duration);
+  });
+}
+
+setTimeoutPromisified(1000).then(function(){
+  console.log("hii");
+setTimeoutPromisified(3000).then(function(){
+  console.log("hello");
+setTimeoutPromisified(5000).then(function(){
+  console.log("you there?");
+});
+});
+});
+
+console.log(("outside call back hell"));
+function setTimeoutPromisified(duration){
+  return new Promise (function(resolve){
+    setTimeout(resolve,duration);
+  });
+}
+
+async function  solve() {
+  await setTimeoutPromisified(1000);
+  console.log("hii");
+  await setTimeoutPromisified(3000);
+  console.log("hello");
+  await setTimeoutPromisified(5000);
+  console.log("you there");
+  
+}
+solve();
+console.log(("outside call back hell"));
